@@ -4,11 +4,9 @@ type ComparatorFunction<T extends Record<string, unknown>, Key extends string | 
   left: Model<T, Key>,
   right: Model<T, Key>
 ) => number;
-// type NodeVisitorFunction<T> = (visitingNode: Node<T>) => boolean;
 export type Callback<T extends Record<string, unknown>, Key extends string | keyof T = 'children'> = (
   model: Node<T, Key>
 ) => boolean;
-//type Predicate<T> = (node: Node<T>) => boolean;
 
 export type Model<T extends Record<string, unknown>, Key extends string | keyof T = 'children'> = T & {
   [K in Key]?: Array<Model<T, Key>>;
@@ -37,5 +35,3 @@ export type walkStrategies<
 export type walkOptions<T extends Record<string, unknown>, Key extends string | keyof T = 'children'> = {
   strategy: keyof walkStrategies<T, Key>;
 };
-
-// export { Node };

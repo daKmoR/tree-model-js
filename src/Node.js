@@ -34,7 +34,6 @@ export class Node {
   constructor(config, model) {
     this.config = config;
     this.model = model;
-    const childProp = this.config.childrenPropertyName;
   }
 
   /**

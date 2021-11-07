@@ -5,7 +5,7 @@
 
 import chai from 'chai';
 import sinon from 'sinon';
-import { TreeModel } from '../index.js';
+import { TreeModel } from '../src/index.js';
 
 const { assert } = chai;
 
@@ -437,6 +437,7 @@ describe('TreeModel', function () {
           assert.throws(
             () => root.walk(callback121, { strategy: 'unknownStrategy' }),
             Error,
+            // eslint-disable-next-line quotes
             "\"unknownStrategy\" is an unknown tree walk strategy. Valid strategies are 'pre' [default], 'post' and 'breadth'."
           );
         });

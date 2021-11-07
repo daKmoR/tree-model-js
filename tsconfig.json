@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.browser-base.json",
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "nodenext",
     "outDir": "./dist-types",
     "rootDir": ".",
     "composite": true,
@@ -10,13 +10,6 @@
     "emitDeclarationOnly": true
   },
   "references": [],
-  "include": [
-    "src",
-    "test",
-    "types"
-, "index.js"  ],
-  "exclude": [
-    "dist",
-    "dist-types"
-  ]
+  "include": ["src", "test", "types", "src/index.js"],
+  "exclude": ["dist", "dist-types"]
 }

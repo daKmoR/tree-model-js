@@ -18,20 +18,19 @@ function addChildToNode(node, child) {
  * @template {string | keyof TM} [Key='children']
  */
 export class TreeModel {
-  /** @type {import('../types/main').Config<TM, Key>} */
-  config = {
-    childrenPropertyName: /** @type {Key} */ ('children'),
-  };
-
   /**
    * @param {Partial<import('../types/main').Config<TM, Key>>} config
    */
   constructor(config = {}) {
-    this.config = { ...this.config, ...config };
+    /** @type {import('../types/main').Config<TM, Key>} */
+    this.config = {
+      childrenPropertyName: /** @type {Key} */ ('children'),
+      ...config,
+    };
   }
 
   /**
-   * @param {import('../types/main').Model<TM, Key>} model 
+   * @param {import('../types/main').Model<TM, Key>} model
    * @returns {Node<TM, Key>}
    */
   parse(model) {
@@ -47,11 +46,7 @@ export class TreeModel {
       if (this.config.modelComparatorFn) {
         children.sort(this.config.modelComparatorFn);
       }
-      for (
-        i = 0, childCount = children.length;
-        i < childCount;
-        i++
-      ) {
+      for (i = 0, childCount = children.length; i < childCount; i++) {
         addChildToNode(node, this.parse(children[i]));
       }
     }
