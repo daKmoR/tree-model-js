@@ -20,6 +20,9 @@
       "types": "./dist-types/types/index.d.ts"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "src",
     "dist-types",
