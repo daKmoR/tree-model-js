@@ -20,6 +20,11 @@
       "types": "./dist-types/types/index.d.ts"
     }
   },
+  "files": [
+    "src",
+    "dist-types",
+    "types"
+  ],
   "scripts": {
     "test": "mocha",
     "lint": "eslint src/*.js test/*.js",
