@@ -1,6 +1,6 @@
 {
   "name": "@d4kmor/tree-model",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manipulate and traverse tree-like structures in javascript.",
   "keywords": [
     "tree",
