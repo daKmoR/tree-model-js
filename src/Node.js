@@ -251,4 +251,8 @@ export class Node {
   hasComparatorFunction() {
     return typeof this.config.modelComparatorFn === 'function';
   }
+
+  toJSON() {
+    return this.model;
+  }
 }
